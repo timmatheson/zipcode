@@ -1,4 +1,3 @@
-# Simple Ruby Class for handling zipcodes when shipping
 # Example
 # zipcode = Zipcode.new("92688-1111")
 # zipcode.code => 92688
