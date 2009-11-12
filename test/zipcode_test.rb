@@ -2,23 +2,24 @@ require 'test_helper'
 
 class ZipcodeTest < Test::Unit::TestCase
   def test_zipcode_code_with_plus_four
-    zipcode = Zipcode.new("92688-1001")
-    assert_equal("92688",zipcode.code)
+    assert_equal("92688",zip("92688-1001").code)
   end
   
   def test_zipcode_plus_four_with_plus_four
-    zipcode = Zipcode.new("10011-1001")
-    assert_equal("1001",zipcode.plus_four)
+    assert_equal("1001",zip("10011-1001").plus_four)
   end
   
   def test_zipcode_code_without_plus_four
-    zipcode = Zipcode.new("XCR MNT")
-    assert_equal("XCRMNT",zipcode.code) 
+    assert_equal("XCRMNT",zip("XCR MNT").code) 
   end
   
   def test_zipcode_plus_four_without_plus_four
-    zipcode = Zipcode.new("KGV RDE")
-    assert_nil zipcode.plus_four
+    assert_nil zip("KGV RDE").plus_four
   end
   
+  private
+  
+  def zip(code)
+    Zipcode.new(code)
+  end
 end
