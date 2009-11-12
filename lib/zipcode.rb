@@ -26,6 +26,6 @@ class Zipcode < Object
   
   # Removes anything other than Alpha-Numerics
   def sanitize_zipcode(zipcode)
-    zipcode.gsub(/([^0-9A-Za-z]| \-)/,'')
+    zipcode.to_s.gsub(/([^0-9A-Za-z]| \-)/,'')
   end
 end

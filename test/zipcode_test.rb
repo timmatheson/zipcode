@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class ZipcodeTest < Test::Unit::TestCase
+  def test_numeric_zipcode_value
+    assert_equal("92688", zip(92688).code)
+  end
+  
   def test_zipcode_code_with_plus_four
     assert_equal("92688",zip("92688-1001").code)
   end
